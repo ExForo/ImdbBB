@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="xfiImdb" title="[XFI] BB-код для IMDB" version_string="1.3.2" version_id="132" url="https://xenforo.info/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates>
+    <template title="xfiImdb_about"><![CDATA[<dl class="ctrlUnit">
+	<dt><label for="ctrl_optionsxfiKpAbout">Поддержка</label></dt>
+	<dd>
+		<p class="explain">Оставляйте все ваши пожелания по улучшению дополнения на форуме xenforo.info, в <a href='https://xenforo.info/resources/2964/' target='_blank'>теме обсуждения дополнения</a>. Отчеты об ошибках, если таковые будут найдены вами в дополнении, размещайте там же.</p>
+	</dd>
+</dl>]]></template>
+  </admin_templates>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners/>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="xfiImdb" display_order="5000" debug_only="0"/>
+    <option option_id="xfiImdbAbout" edit_format="template" data_type="string" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params>xfiImdb_about</edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="xfiImdb" display_order="100"/>
+    </option>
+    <option option_id="xfiImdbCache" edit_format="spinbox" data_type="unsigned_integer" can_backup="1">
+      <default_value>14</default_value>
+      <edit_format_params>min=1</edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="xfiImdb" display_order="30"/>
+    </option>
+    <option option_id="xfiImdbSitename" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value>xenforo.info</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="xfiImdb" display_order="10"/>
+    </option>
+    <option option_id="xfiImdbTheme" edit_format="select" data_type="string" can_backup="1">
+      <default_value>black</default_value>
+      <edit_format_params>green=Зеленый рассвет
+black=Темная ночь</edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="xfiImdb" display_order="40"/>
+    </option>
+    <option option_id="xfiImdbUrl" edit_format="radio" data_type="boolean" can_backup="1">
+      <default_value>1</default_value>
+      <edit_format_params>1=Выводить ссылку
+0=Не выводить ссылку</edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="xfiImdb" display_order="20"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="custom_bb_code_imdb_desc" version_id="110" version_string="1.1.0"><![CDATA[Выводит изображение с рейтингом фильма и ссылкой на него с IMDB. В качестве параметра в BB-коде указывается id фильма на IMDB или полная ссылка на фильм. Например, если ссылка на фильм: http://www.imdb.com/title/tt2279373, то вы можете использовать в BB-коде как id фильма, который в данном примере равен: tt2279373, так и полную ссылку на фильм.]]></phrase>
+    <phrase title="custom_bb_code_imdb_title" global_cache="1" version_id="110" version_string="1.1.0"><![CDATA[Рейтинг фильма с IMDB]]></phrase>
+    <phrase title="option_group_xfiImdb" version_id="110" version_string="1.1.0"><![CDATA[[XFI] BB-код для IMDB]]></phrase>
+    <phrase title="option_group_xfiImdb_description" version_id="110" version_string="1.1.0"><![CDATA[Настройки модификации BB-код для IMDB.]]></phrase>
+    <phrase title="option_xfiImdbAbout" version_id="110" version_string="1.1.0"><![CDATA[О дополнении]]></phrase>
+    <phrase title="option_xfiImdbAbout_explain" version_id="110" version_string="1.1.0"><![CDATA[Пожелания сюда]]></phrase>
+    <phrase title="option_xfiImdbCache" version_id="110" version_string="1.1.0"><![CDATA[Срок жизни кеша изображений (в днях)]]></phrase>
+    <phrase title="option_xfiImdbCache_explain" version_id="110" version_string="1.1.0"><![CDATA[Введите срок в днях, по истечении которых изображение с рейтингом фильма будет обновляться (для отображения изменений в рейтинге). Не рекомендуется делать это очень часто, поскольку со стороны IMDB могут быть введены ограничения на частоту запросов.]]></phrase>
+    <phrase title="option_xfiImdbSitename" version_id="120" version_string="1.2.0"><![CDATA[Название сайта]]></phrase>
+    <phrase title="option_xfiImdbSitename_explain" version_id="120" version_string="1.2.0"><![CDATA[Укажите имя сайта, которое будет выводиться на генерируемых изображениях. Указывать его необходимо на латинице, поскольку в используемом для отображения шрифте нет поддержки кириллицы.]]></phrase>
+    <phrase title="option_xfiImdbTheme" version_id="130" version_string="1.3.0"><![CDATA[Схема оформления]]></phrase>
+    <phrase title="option_xfiImdbTheme_explain" version_id="130" version_string="1.3.0"><![CDATA[Выберите цветовую схему оформления генерируемого изображения.]]></phrase>
+    <phrase title="option_xfiImdbUrl" version_id="110" version_string="1.1.0"><![CDATA[Ссылка на фильм]]></phrase>
+    <phrase title="option_xfiImdbUrl_explain" version_id="110" version_string="1.1.0"><![CDATA[Должно ли изображение быть кликабельно и вести на страницу соответствующего фильма на IMDB?]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications>
+    <modification template="EXTRA.css" modification_key="xfiImdbFavicon" description="FontAwesome иконка BB-кода IMDB" execution_order="10" enabled="0" action="preg_replace">
+      <find><![CDATA[/^.*$/s]]></find>
+      <replace><![CDATA[$0
+html .redactor_toolbar li a.redactor_btn_custom_imdb:before {content: "\f145";}]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites>
+    <site media_site_id="imdb" site_title="IMDB" site_url="http://www.imdb.com" match_is_regex="0" match_callback_class="" match_callback_method="" embed_html_callback_class="XFI_BbCode_Imdb" embed_html_callback_method="buildEmbed" supported="1">
+      <match_urls><![CDATA[imdb.com/title/{$id}]]></match_urls>
+      <embed_html><![CDATA[<!--callback-->]]></embed_html>
+    </site>
+  </bb_code_media_sites>
+  <bb_codes>
+    <bb_code bb_code_id="imdb" bb_code_mode="callback" has_option="no" callback_class="XFI_BbCode_Imdb" callback_method="tagImdb" option_regex="" trim_lines_after="0" plain_children="0" disable_smilies="0" disable_nl2br="0" disable_autolink="0" allow_empty="0" allow_signature="0" editor_icon_url="styles/xfi/imdb.png" sprite_mode="1" active="1" sprite_params_x="3" sprite_params_y="3">
+      <replace_html><![CDATA[]]></replace_html>
+      <replace_html_email><![CDATA[]]></replace_html_email>
+      <replace_text><![CDATA[]]></replace_text>
+      <example><![CDATA[[IMDB]tt2279373[/IMDB]
+[IMDB]http://www.imdb.com/title/tt2279373[/IMDB]]]></example>
+    </bb_code>
+  </bb_codes>
+</addon>
